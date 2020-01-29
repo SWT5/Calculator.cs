@@ -101,5 +101,14 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
         }
+
+
+        /***    To Handin (add, subtract, multiply, Divide, Power)   ***/
+        [Test]
+        public void Add1_firstPositiveSecondPositive_return2()
+        {
+            Assert.That(uut.Add_1(2).Add_1(2).get_total, Is.EqualTo(4));
+        }
+
     }
 }

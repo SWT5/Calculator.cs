@@ -9,6 +9,7 @@ namespace Calculator.cs
     interface ICalculator
     {
         double Add(double a, double b);
+        Calculator Add_1(double addend);
         double Subtract(double a, double b);
         double Multiply(double a, double b);
         double Power(double x, double exp);
