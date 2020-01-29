@@ -47,6 +47,13 @@ namespace Calculator.cs
             return a * b;
         }
 
+        public Calculator Multiply(double multiplier)
+        {
+            get_total *= multiplier;
+
+            return this;
+        }
+
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp);

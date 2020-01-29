@@ -155,5 +155,26 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subract_1(-5).Subract_1(-4).get_total, Is.EqualTo(9));
         }
 
+        /**         Multiplication           **/
+        [Test]
+        public void mul1_firstPositive_secondPositive_return4()
+        {
+            Assert.That(uut.Add_1(1).Multiply(2).Multiply(2).get_total,Is.EqualTo(4));
+        }
+        [Test]
+        public void mul1_firstNegative_secondPositive_returnNegative4()
+        {
+            Assert.That(uut.Add_1(1).Multiply(-2).Multiply(2).get_total, Is.EqualTo(-4));
+        }
+        [Test]
+        public void mul1_firstPositive_secondNegative_returnNegative4()
+        {
+            Assert.That(uut.Add_1(1).Multiply(2).Multiply(-2).get_total, Is.EqualTo(-4));
+        }
+        [Test]
+        public void mul1_firstNegative_secondNegative_returnNegative4()
+        {
+            Assert.That(uut.Add_1(1).Multiply(-2).Multiply(-2).get_total, Is.EqualTo(4));
+        }
     }
 }
