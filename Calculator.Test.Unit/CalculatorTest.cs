@@ -95,5 +95,11 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Power(1, -1), Is.EqualTo(1));
         }
+
+        [Test]
+        public void addMinus_returnnegative2()
+        {
+            Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
+        }
     }
 }
