@@ -8,7 +8,7 @@ namespace Calculator.cs
 {
     public class Calculator : ICalculator
     {
-        public double get_total { get; private set; }
+        public double Accumulator { get; private set; }
         //private double total_;
         
         //private List<double> _res = new List<double>();
@@ -16,7 +16,7 @@ namespace Calculator.cs
 
         public Calculator()
         {
-           get_total = 1;
+            Accumulator = 1;
         }
         public double Add(double a, double b)
         {
@@ -25,7 +25,7 @@ namespace Calculator.cs
 
         public Calculator Add_1(double addend)
         {
-            get_total += addend;
+            Accumulator += addend;
             
             return this;
         }
@@ -37,7 +37,7 @@ namespace Calculator.cs
 
         public Calculator Subract_1(double subtractor)
         {
-            get_total -= subtractor;
+            Accumulator -= subtractor;
 
             return this;
         }
@@ -49,7 +49,7 @@ namespace Calculator.cs
 
         public Calculator Multiply(double multiplier)
         {
-            get_total *= multiplier;
+            Accumulator *= multiplier;
 
             return this;
         }
@@ -61,14 +61,14 @@ namespace Calculator.cs
 
         public Calculator Power_1(double exponent)
         {
-            get_total = Math.Pow(get_total, exponent);
+            Accumulator = Math.Pow(Accumulator, exponent);
 
             return this;
         }
 
         public Calculator Divide(double division)
         {
-            get_total /= division;
+            Accumulator /= division;
 
             return this;
         }
