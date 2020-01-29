@@ -16,7 +16,7 @@ namespace Calculator.cs
 
         public Calculator()
         {
-           get_total = 0;
+           get_total = 1;
         }
         public double Add(double a, double b)
         {
@@ -57,6 +57,20 @@ namespace Calculator.cs
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp);
+        }
+
+        public Calculator Power_1(double exponent)
+        {
+            get_total = Math.Pow(get_total, exponent);
+
+            return this;
+        }
+
+        public Calculator Divide(double division)
+        {
+            get_total /= division;
+
+            return this;
         }
     }
 }
