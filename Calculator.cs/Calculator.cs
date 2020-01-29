@@ -38,6 +38,7 @@ namespace Calculator.cs
         public Calculator Subract_1(double subtractor)
         {
             get_total -= subtractor;
+
             return this;
         }
 
@@ -49,11 +50,6 @@ namespace Calculator.cs
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp);
-        }
-
-        public object Add_1(object v)
-        {
-            throw new NotImplementedException();
         }
     }
 }
