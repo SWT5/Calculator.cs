@@ -11,6 +11,7 @@ namespace Calculator.cs
         double Add(double a, double b);
         Calculator Add_1(double addend);
         double Subtract(double a, double b);
+        Calculator Subract_1(double subtractor);
         double Multiply(double a, double b);
         double Power(double x, double exp);
     }

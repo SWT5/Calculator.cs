@@ -104,11 +104,32 @@ namespace Calculator.Test.Unit
 
 
         /***    To Handin (add, subtract, multiply, Divide, Power)   ***/
+                        /**         Addition            **/
         [Test]
-        public void Add1_firstPositiveSecondPositive_return2()
+        public void Add1_firstPositive_SecondPositive_return2()
         {
             Assert.That(uut.Add_1(2).Add_1(2).get_total, Is.EqualTo(4));
         }
+
+        [Test]
+        public void Add1_firstNegative_secondPositive_return0()
+        {
+            Assert.That(uut.Add_1(-2).Add_1(2).get_total, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Add1_firstPositive_secondNegative_return0()
+        {
+            Assert.That(uut.Add_1(2).Add_1(-2).get_total, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Add1_firstNegative_secondNegative_returnNegative4()
+        {
+            Assert.That(uut.Add_1(-2).Add_1(-2).get_total, Is.EqualTo(-4));
+        }
+
+                        /**         subtraction           **/
 
     }
 }

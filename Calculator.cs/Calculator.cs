@@ -35,6 +35,12 @@ namespace Calculator.cs
             return a - b;
         }
 
+        public Calculator Subract_1(double subtractor)
+        {
+            get_total -= subtractor;
+            return this;
+        }
+
         public double Multiply(double a, double b)
         {
             return a * b;
