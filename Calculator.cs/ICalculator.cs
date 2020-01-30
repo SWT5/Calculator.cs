@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +16,5 @@ namespace Calculator.cs
         double Multiply(double a, double b);
         Calculator Multiply(double multiplier);
         double Power(double x, double exp);
-        Calculator Power_1(double exponent);
-
-        Calculator Divide(double division);
     }
 }
