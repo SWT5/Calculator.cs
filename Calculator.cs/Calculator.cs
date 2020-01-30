@@ -10,9 +10,11 @@ namespace Calculator.cs
     {
         public double get_total { get; }
         private double total_;
+
+        public double Accumulator { get; set; }
         public Calculator()
         {
-            Accumulator = 1;
+            Accumulator = 0;
         }
         public double Add(double a, double b)
         {
