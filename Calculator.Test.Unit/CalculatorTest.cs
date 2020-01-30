@@ -101,5 +101,22 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
         }
+
+
+
+
+        [TestCase(2,2,4)]
+        [TestCase(2,-2,0)]
+        public void accumulatorAdd(double a, double b,double result)
+        {
+            Assert.That(uut.Add(a,b),Is.EqualTo(uut.Accumulator));
+
+        }
+
+       /* [TestCase(2, 2, 1)]
+        public void accumulatorDivide(double a, double b, double result)
+        {
+            Assert.That(uut.Divide(a,b),Is.EqualTo(uut.Accumulator));
+        }*/
     }
 }

@@ -8,10 +8,9 @@ namespace Calculator.cs
 {
     public class Calculator : ICalculator
     {
-        public double get_total { get; }
-        private double total_;
+      
 
-        public double Accumulator { get; set; }
+        public double Accumulator { get; private set; }     // accumulator property
         public Calculator()
         {
             Accumulator = 0;
