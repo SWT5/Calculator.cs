@@ -101,6 +101,5 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
         }
-
     }
 }

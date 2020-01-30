@@ -58,21 +58,5 @@ namespace Calculator.cs
         {
             return Math.Pow(x, exp);
         }
-
-        public Calculator Power_1(double exponent)
-        {
-            Accumulator = Math.Pow(Accumulator, exponent);
-
-            return this;
-        }
-
-        public Calculator Divide(double division)
-        {
-            Accumulator /= division;
-
-            return this;
-        }
-
-
     }
 }
