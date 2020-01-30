@@ -113,10 +113,29 @@ namespace Calculator.Test.Unit
 
         }
 
-       /* [TestCase(2, 2, 1)]
+       /*[TestCase(2, 2, 1)]
         public void accumulatorDivide(double a, double b, double result)
         {
             Assert.That(uut.Divide(a,b),Is.EqualTo(uut.Accumulator));
         }*/
+
+       [TestCase(2, 3, 6)]
+       public void accumulatorMultiply(double a, double b, double result)
+       {
+           Assert.That(uut.Multiply(a,b),Is.EqualTo(uut.Accumulator));
+       }
+
+
+       [TestCase(6, 2, 3)]
+       public void accumulatorSubtract(double a, double b, double result)
+       {
+           Assert.That(uut.Subtract(a,b),Is.EqualTo(uut.Accumulator));
+       }
+
+       [TestCase(3, 2, 9)]
+       public void accumulatorPower(double x, double exp, double result)
+       {
+           Assert.That(uut.Power(x, exp), Is.EqualTo(uut.Accumulator)); 
+       }
     }
 }
