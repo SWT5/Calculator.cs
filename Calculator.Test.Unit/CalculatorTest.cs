@@ -95,5 +95,15 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Power(1, -1), Is.EqualTo(1));
         }
+
+
+
+        // test af Accumulator 
+
+        [Test]
+        public void accumulatorTest_add2Num()
+        {
+            Assert.That(uut.Add(a,b),)
+        }
     }
 }
