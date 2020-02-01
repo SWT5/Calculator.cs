@@ -46,7 +46,7 @@ namespace Calculator.cs
             return Accumulator = a * b;
         }
 
-        public Calculator Multiply(double multiplier)
+        public Calculator Multiply_1(double multiplier)
         {
             Accumulator *= multiplier;
 

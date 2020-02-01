@@ -102,8 +102,122 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
         }
 
+        /* addition */
+        [Test]
+        public void add1_bothPositive_return2()
+        {
+            Assert.That(uut.Add_1(1).Add_1(1).Accumulator, Is.EqualTo(2));
+        }
 
+        [Test]
+        public void add1_Negative_positive_return0()
+        {
+            Assert.That(uut.Add_1(-1).Add_1(1).Accumulator, Is.EqualTo(0));
+        }
 
+        [Test]
+        public void add1_positive_negative_return0()
+        {
+            Assert.That(uut.Add_1(1).Add_1(-1).Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void add1_negative_negative_returnNegative2()
+        {
+            Assert.That(uut.Add_1(-1).Add_1(-1).Accumulator, Is.EqualTo(-2));
+        }
+
+        /* subtraction*/
+        [Test]
+        public void sub1_bothPositive_returnNegative4()
+        {
+            Assert.That(uut.Subract_1(2).Subract_1(2).Accumulator, Is.EqualTo(-4));
+        }
+
+        [Test]
+        public void sub1_Negative_positive_returnNegative0()
+        {
+            Assert.That(uut.Subract_1(-1).Subract_1(1).Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void sub1_positive_negative_return0()
+        {
+            Assert.That(uut.Subract_1(1).Subract_1(-1).Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void sub1_negative_negative_return2()
+        {
+            Assert.That(uut.Subract_1(-1).Subract_1(-1).Accumulator, Is.EqualTo(2));
+        }
+
+        /* Multiply*/
+        [Test]
+        public void mul1_bothPositive_return8()
+        {
+            Assert.That(uut.Add_1(2).Multiply_1(2).Multiply_1(2).Accumulator, Is.EqualTo(8));
+        }
+
+        [Test]
+        public void mul1_Negative_positive_returnNegative8()
+        {
+            Assert.That(uut.Add_1(2).Multiply_1(-2).Multiply_1(2).Accumulator, Is.EqualTo(-8));
+        }
+
+        [Test]
+        public void mul1_positive_negative_returnNegative8()
+        {
+            Assert.That(uut.Add_1(2).Multiply_1(2).Multiply_1(-2).Accumulator, Is.EqualTo(-8));
+        }
+
+        [Test]
+        public void mul1_negative_negative_return8()
+        {
+            Assert.That(uut.Add_1(2).Multiply_1(-2).Multiply_1(-2).Accumulator, Is.EqualTo(8));
+        }
+
+        /* power*/
+        [Test]
+        public void pow1_bothPositive_return16()
+        {
+            Assert.That(uut.Add_1(2).Power_1(2).Power_1(2).Accumulator, Is.EqualTo(16));
+        }
+
+        [Test]
+        public void pow1_Negative_positive_return00625()
+        {
+            Assert.That(uut.Add_1(2).Power_1(-2).Power_1(2).Accumulator, Is.EqualTo(0.0625));
+        }
+
+        [Test]
+        public void pow1_positive_negative_return00625()
+        {
+            Assert.That(uut.Add_1(2).Power_1(2).Power_1(-2).Accumulator, Is.EqualTo(0.0625));
+        }
+
+        [Test]
+        public void pow1_negative_negative_return16()
+        {
+            Assert.That(uut.Add_1(2).Power_1(-2).Power_1(-2).Accumulator, Is.EqualTo(16));
+        }
+
+        /* division*/
+        [Test]
+        public void div1_Positive_return1()
+        {
+            Assert.That(uut.Add_1(2).Divide(2).Divide(1).Accumulator, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void div1_Negative_returnNegative5()
+        {
+            Assert.That(uut.Add_1(10).Divide(-2).Accumulator, Is.EqualTo(-5));
+        }
+
+      
+
+      
 
         [TestCase(2,2,4)]
         [TestCase(2,-2,0)]
