@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,7 +56,22 @@ namespace Calculator.cs
 
         public double Power(double x, double exp)
         {
-            return Accumulator = Math.Pow(x, exp);
+            try
+            {
+                Accumulator = Math.Pow(x, exp);
+            }
+
+            catch (InvalidOleVariantTypeException e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return Accumulator;
         }
 
         public Calculator Power_1(double exponent)

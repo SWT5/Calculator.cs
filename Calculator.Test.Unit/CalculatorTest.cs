@@ -201,6 +201,18 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Add_1(2).Power_1(-2).Power_1(-2).Accumulator, Is.EqualTo(16));
         }
+        [Test]
+        public void pow_negativeX()
+        {
+            Assert.That(uut.Power(-2, 3), Is.EqualTo(-8));
+        }
+
+        [TestCase(-2,-2,0.25)]
+        [TestCase(-4,3.2, -46.76)]
+        public void pow_negativeXwithExpChar(double a,double b, double result)
+        {
+            Assert.That(uut.Power(a,b),Is.EqualTo(result));
+        }
 
         /* division*/
         [Test]
@@ -215,9 +227,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add_1(10).Divide(-2).Accumulator, Is.EqualTo(-5));
         }
 
-      
-
-      
 
         [TestCase(2,2,4)]
         [TestCase(2,-2,0)]
