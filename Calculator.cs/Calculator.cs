@@ -83,6 +83,10 @@ namespace Calculator.cs
 
         public Calculator Divide(double division)
         {
+            if (division == 0)
+            {
+                divideException();
+            }
             Accumulator /= division;
 
             return this;
@@ -92,5 +96,9 @@ namespace Calculator.cs
             Accumulator = 0;
         }
 
+        public void divideException()
+        {
+            throw new System.DivideByZeroException("Not allowed to divide by zero");
+        }
     }
 }
