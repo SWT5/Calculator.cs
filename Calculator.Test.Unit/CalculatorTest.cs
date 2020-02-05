@@ -272,5 +272,12 @@ namespace Calculator.Test.Unit
             uut.clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
+
+
+        [Test]
+        public void divideException()
+        {
+            Assert.Throws<DivideByZeroException>(() =>uut.Divide(0));
+        }
     }
 }
