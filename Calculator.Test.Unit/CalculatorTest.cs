@@ -208,8 +208,10 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(-2,-2,0.25)]
-        [TestCase(-4,3.2, -46.76)]
-        public void pow_negativeXwithExpChar(double a,double b, double result)
+        [TestCase(-4,5, -1024)]
+        [TestCase(5, -4, 0.0016)]
+        [TestCase(-5, -4, 0.0016)]
+        public void pow_ExpChar(double a,double b, double result)
         {
             Assert.That(uut.Power(a,b),Is.EqualTo(result));
         }
