@@ -20,6 +20,6 @@ namespace Calculator.cs
 
         Calculator Divide(double division);
 
-        void clear();
+        void clear(); //
     }
 }
