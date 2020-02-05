@@ -213,10 +213,10 @@ namespace Calculator.Test.Unit
         [TestCase(-4,5, -1024)]
         [TestCase(5, -4, 0.0016)]
         [TestCase(-5, -4, 0.0016)]
-        [TestCase(5, -1.5, 0.089)]
+        [TestCase(-5, -4, 10)]
         public void pow_ExpChar(double a,double b, double result)
         {
-            Assert.That(uut.Power(a, b), Is.EqualTo(result).Within(0.05));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
         /* division*/
