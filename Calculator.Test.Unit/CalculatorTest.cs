@@ -20,6 +20,15 @@ namespace Calculator.Test.Unit
             uut = new Calculator.cs.Calculator();
         }
 
+        [TestCase(10, 2, 5)]
+        [TestCase(10,-2,-5)]
+        [TestCase(-10,2,-5)]
+        [TestCase(-10, -2, 5)]
+        public void divide_2parameters(double dividend, double divisor, double result)
+        {
+            Assert.That(uut.Divide(dividend,divisor), Is.EqualTo(uut.Accumulator));
+        }
+
         [Test]
         public void addNumbers_twoNumbers_return1()
         {
@@ -107,100 +116,100 @@ namespace Calculator.Test.Unit
         [Test]
         public void add1_bothPositive_return2()
         {
-            Assert.That(uut.Add_1(1).Add_1(1).Accumulator, Is.EqualTo(2));
+            Assert.That(uut.Add(1).Add(1).Accumulator, Is.EqualTo(2));
         }
 
         [Test]
         public void add1_Negative_positive_return0()
         {
-            Assert.That(uut.Add_1(-1).Add_1(1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Add(-1).Add(1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void add1_positive_negative_return0()
         {
-            Assert.That(uut.Add_1(1).Add_1(-1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Add(1).Add(-1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void add1_negative_negative_returnNegative2()
         {
-            Assert.That(uut.Add_1(-1).Add_1(-1).Accumulator, Is.EqualTo(-2));
+            Assert.That(uut.Add(-1).Add(-1).Accumulator, Is.EqualTo(-2));
         }
 
         /* subtraction*/
         [Test]
         public void sub1_bothPositive_returnNegative4()
         {
-            Assert.That(uut.Subract_1(2).Subract_1(2).Accumulator, Is.EqualTo(-4));
+            Assert.That(uut.Subract(2).Subract(2).Accumulator, Is.EqualTo(-4));
         }
 
         [Test]
         public void sub1_Negative_positive_returnNegative0()
         {
-            Assert.That(uut.Subract_1(-1).Subract_1(1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Subract(-1).Subract(1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void sub1_positive_negative_return0()
         {
-            Assert.That(uut.Subract_1(1).Subract_1(-1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Subract(1).Subract(-1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void sub1_negative_negative_return2()
         {
-            Assert.That(uut.Subract_1(-1).Subract_1(-1).Accumulator, Is.EqualTo(2));
+            Assert.That(uut.Subract(-1).Subract(-1).Accumulator, Is.EqualTo(2));
         }
 
         /* Multiply*/
         [Test]
         public void mul1_bothPositive_return8()
         {
-            Assert.That(uut.Add_1(2).Multiply_1(2).Multiply_1(2).Accumulator, Is.EqualTo(8));
+            Assert.That(uut.Add(2).Multiply(2).Multiply(2).Accumulator, Is.EqualTo(8));
         }
 
         [Test]
         public void mul1_Negative_positive_returnNegative8()
         {
-            Assert.That(uut.Add_1(2).Multiply_1(-2).Multiply_1(2).Accumulator, Is.EqualTo(-8));
+            Assert.That(uut.Add(2).Multiply(-2).Multiply(2).Accumulator, Is.EqualTo(-8));
         }
 
         [Test]
         public void mul1_positive_negative_returnNegative8()
         {
-            Assert.That(uut.Add_1(2).Multiply_1(2).Multiply_1(-2).Accumulator, Is.EqualTo(-8));
+            Assert.That(uut.Add(2).Multiply(2).Multiply(-2).Accumulator, Is.EqualTo(-8));
         }
 
         [Test]
         public void mul1_negative_negative_return8()
         {
-            Assert.That(uut.Add_1(2).Multiply_1(-2).Multiply_1(-2).Accumulator, Is.EqualTo(8));
+            Assert.That(uut.Add(2).Multiply(-2).Multiply(-2).Accumulator, Is.EqualTo(8));
         }
 
         /* power*/
         [Test]
         public void pow1_bothPositive_return16()
         {
-            Assert.That(uut.Add_1(2).Power_1(2).Power_1(2).Accumulator, Is.EqualTo(16));
+            Assert.That(uut.Add(2).Power(2).Power(2).Accumulator, Is.EqualTo(16));
         }
 
         [Test]
         public void pow1_Negative_positive_return00625()
         {
-            Assert.That(uut.Add_1(2).Power_1(-2).Power_1(2).Accumulator, Is.EqualTo(0.0625));
+            Assert.That(uut.Add(2).Power(-2).Power(2).Accumulator, Is.EqualTo(0.0625));
         }
 
         [Test]
         public void pow1_positive_negative_return00625()
         {
-            Assert.That(uut.Add_1(2).Power_1(2).Power_1(-2).Accumulator, Is.EqualTo(0.0625));
+            Assert.That(uut.Add(2).Power(2).Power(-2).Accumulator, Is.EqualTo(0.0625));
         }
 
         [Test]
         public void pow1_negative_negative_return16()
         {
-            Assert.That(uut.Add_1(2).Power_1(-2).Power_1(-2).Accumulator, Is.EqualTo(16));
+            Assert.That(uut.Add(2).Power(-2).Power(-2).Accumulator, Is.EqualTo(16));
         }
 
         [Test]
@@ -213,22 +222,23 @@ namespace Calculator.Test.Unit
         [TestCase(-4,5, -1024)]
         [TestCase(5, -4, 0.0016)]
         [TestCase(-5, -4, 0.0016)]
+        //[TestCase(-5, -4, 10)] failed test
         public void pow_ExpChar(double a,double b, double result)
         {
-            Assert.That(uut.Power(a, b), Is.EqualTo(result).Within(0.05));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
         /* division*/
         [Test]
         public void div1_Positive_return1()
         {
-            Assert.That(uut.Add_1(2).Divide(2).Divide(1).Accumulator, Is.EqualTo(1));
+            Assert.That(uut.Add(2).Divide(2).Divide(1).Accumulator, Is.EqualTo(1));
         }
 
         [Test]
         public void div1_Negative_returnNegative5()
         {
-            Assert.That(uut.Add_1(10).Divide(-2).Accumulator, Is.EqualTo(-5));
+            Assert.That(uut.Add(10).Divide(-2).Accumulator, Is.EqualTo(-5));
         }
 
 

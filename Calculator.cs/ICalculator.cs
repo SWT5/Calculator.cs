@@ -9,19 +9,21 @@ namespace Calculator.cs
 {
     interface ICalculator
     {
+        double Divide(double dividend, double divisor);
         double Add(double a, double b);
-        Calculator Add_1(double addend);
+        Calculator Add(double addend);
         double Subtract(double a, double b);
-        Calculator Subract_1(double subtractor);
+        Calculator Subract(double subtractor);
         double Multiply(double a, double b);
-        Calculator Multiply_1(double multiplier);
+        Calculator Multiply(double multiplier);
         double Power(double x, double exp);
-        Calculator Power_1(double exponent);
+        Calculator Power(double exponent);
 
         Calculator Divide(double division);
 
         void clear();
 
         void divideException();
+       
     }
 }
