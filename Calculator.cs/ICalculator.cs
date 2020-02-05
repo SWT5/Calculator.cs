@@ -16,5 +16,6 @@ namespace Calculator.cs
         double Multiply(double a, double b);
         Calculator Multiply(double multiplier);
         double Power(double x, double exp);
+        void clear();
     }
 }

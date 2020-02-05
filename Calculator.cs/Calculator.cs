@@ -8,9 +8,6 @@ namespace Calculator.cs
 {
     public class Calculator : ICalculator
     {
-        public double get_total { get; }
-        private double total_;
-
         public double Accumulator { get; set; }
         public Calculator()
         {
@@ -71,6 +68,12 @@ namespace Calculator.cs
             Accumulator /= division;
 
             return this;
+        }
+
+        public void clear()
+        {
+
+            Accumulator = 0;
         }
     }
 }
