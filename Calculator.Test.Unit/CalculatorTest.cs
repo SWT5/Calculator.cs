@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -25,14 +26,14 @@ namespace Calculator.Test.Unit
             //arrange
             //Act
             //Assert
-            Assert.That(uut.Add(1,0), Is.EqualTo(1));
+            Assert.That(uut.Add(1, 0), Is.EqualTo(1));
         }
-        
+
         [Test]
         public void addNumbers_twoNumbers_secondMinusFirstPlus_return1()
         {
 
-            Assert.That(uut.Add(2,-1), Is.EqualTo(1));
+            Assert.That(uut.Add(2, -1), Is.EqualTo(1));
         }
 
         [Test]
@@ -41,11 +42,11 @@ namespace Calculator.Test.Unit
 
             Assert.That(uut.Add(-1, 2), Is.EqualTo(1));
         }
-        
+
         [Test]
         public void subractNumbers_twoNumbers_return1()
         {
-            Assert.That(uut.Subtract(2,1),Is.EqualTo(1));
+            Assert.That(uut.Subtract(2, 1), Is.EqualTo(1));
         }
 
         [Test]
@@ -63,7 +64,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void multiplyNumbers_twoNumbers_return1()
         {
-            Assert.That(uut.Multiply(1,1), Is.EqualTo(1));
+            Assert.That(uut.Multiply(1, 1), Is.EqualTo(1));
         }
 
         [Test]
@@ -99,7 +100,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void addMinus_returnnegative2()
         {
-            Assert.That(uut.Add(-1,-1),Is.EqualTo(-2));
+            Assert.That(uut.Add(-1, -1), Is.EqualTo(-2));
         }
 
         /* addition */
@@ -201,17 +202,18 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Add_1(2).Power_1(-2).Power_1(-2).Accumulator, Is.EqualTo(16));
         }
+
         [Test]
         public void pow_negativeX()
         {
             Assert.That(uut.Power(-2, 3), Is.EqualTo(-8));
         }
 
-        [TestCase(-2,-2,0.25)]
-        [TestCase(-4,3.2, -46.76)]
-        public void pow_negativeXwithExpChar(double a,double b, double result)
+        [TestCase(-2, -2, 0.25)]
+        [TestCase(-4, 3.2, -46.76)]
+        public void pow_negativeXwithExpChar(double a, double b, double result)
         {
-            Assert.That(uut.Power(a,b),Is.EqualTo(result));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
         /* division*/
@@ -228,38 +230,45 @@ namespace Calculator.Test.Unit
         }
 
 
-        [TestCase(2,2,4)]
-        [TestCase(2,-2,0)]
-        public void accumulatorAdd(double a, double b,double result)
+        [TestCase(2, 2, 4)]
+        [TestCase(2, -2, 0)]
+        public void accumulatorAdd(double a, double b, double result)
         {
-            Assert.That(uut.Add(a,b),Is.EqualTo(uut.Accumulator));
+            Assert.That(uut.Add(a, b), Is.EqualTo(uut.Accumulator));
 
         }
 
-       /*[TestCase(2, 2, 1)]
-        public void accumulatorDivide(double a, double b, double result)
+        /*[TestCase(2, 2, 1)]
+         public void accumulatorDivide(double a, double b, double result)
+         {
+             Assert.That(uut.Divide(a,b),Is.EqualTo(uut.Accumulator));
+         }*/
+
+        [TestCase(2, 3, 6)]
+        public void accumulatorMultiply(double a, double b, double result)
         {
-            Assert.That(uut.Divide(a,b),Is.EqualTo(uut.Accumulator));
-        }*/
-
-       [TestCase(2, 3, 6)]
-       public void accumulatorMultiply(double a, double b, double result)
-       {
-           Assert.That(uut.Multiply(a,b),Is.EqualTo(uut.Accumulator));
-       }
+            Assert.That(uut.Multiply(a, b), Is.EqualTo(uut.Accumulator));
+        }
 
 
-       [TestCase(6, 2, 3)]
-       public void accumulatorSubtract(double a, double b, double result)
-       {
-           Assert.That(uut.Subtract(a,b),Is.EqualTo(uut.Accumulator));
-       }
+        [TestCase(6, 2, 3)]
+        public void accumulatorSubtract(double a, double b, double result)
+        {
+            Assert.That(uut.Subtract(a, b), Is.EqualTo(uut.Accumulator));
+        }
 
-       [TestCase(3, 2, 9)]
-       public void accumulatorPower(double x, double exp, double result)
-       {
-           Assert.That(uut.Power(x, exp), Is.EqualTo(uut.Accumulator)); 
-       }
+        [TestCase(3, 2, 9)]
+        public void accumulatorPower(double x, double exp, double result)
+        {
+            Assert.That(uut.Power(x, exp), Is.EqualTo(uut.Accumulator));
+        }
 
+
+        [Test]
+        public void ClearTest()
+        {
+            uut.clear();
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
     }
 }
