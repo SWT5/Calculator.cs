@@ -9,9 +9,14 @@ namespace Calculator.cs
 {
     public class Calculator : ICalculator
     {
-      
 
         public double Accumulator { get; private set; }     // accumulator property
+
+        public double Divide(double dividend, double divisor)
+        {
+            Accumulator = dividend / divisor;
+            return Accumulator;
+        }
         public Calculator()
         {
             Accumulator = 0;
@@ -22,7 +27,7 @@ namespace Calculator.cs
             return Accumulator; 
         }
 
-        public Calculator Add_1(double addend)
+        public Calculator Add(double addend)
         {
             Accumulator += addend;
             
@@ -35,7 +40,7 @@ namespace Calculator.cs
             return Accumulator = a - b;
         }
 
-        public Calculator Subract_1(double subtractor)
+        public Calculator Subract(double subtractor)
         {
             Accumulator -= subtractor;
 
@@ -47,7 +52,7 @@ namespace Calculator.cs
             return Accumulator = a * b;
         }
 
-        public Calculator Multiply_1(double multiplier)
+        public Calculator Multiply(double multiplier)
         {
             Accumulator *= multiplier;
 
@@ -74,7 +79,7 @@ namespace Calculator.cs
             return Accumulator;
         }
 
-        public Calculator Power_1(double exponent)
+        public Calculator Power(double exponent)
         {
             Accumulator = Math.Pow(Accumulator, exponent);
 
