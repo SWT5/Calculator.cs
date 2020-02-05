@@ -91,5 +91,6 @@ namespace Calculator.cs
         {
             Accumulator = 0;
         }
+
     }
 }
