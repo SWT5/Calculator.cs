@@ -213,9 +213,10 @@ namespace Calculator.Test.Unit
         [TestCase(-4,5, -1024)]
         [TestCase(5, -4, 0.0016)]
         [TestCase(-5, -4, 0.0016)]
+        [TestCase(5, -1.5, 0.089)]
         public void pow_ExpChar(double a,double b, double result)
         {
-            Assert.That(uut.Power(a, b), Is.EqualTo(result));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result).Within(0.05));
         }
 
         /* division*/
@@ -272,5 +273,7 @@ namespace Calculator.Test.Unit
             uut.clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
+
+
     }
 }
