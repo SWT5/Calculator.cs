@@ -40,7 +40,7 @@ namespace Calculator.cs
             return Accumulator = a - b;
         }
 
-        public Calculator Subract(double subtractor)
+        public Calculator Subtract(double subtractor)
         {
             Accumulator -= subtractor;
 

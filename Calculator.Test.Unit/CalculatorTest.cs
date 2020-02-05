@@ -141,25 +141,25 @@ namespace Calculator.Test.Unit
         [Test]
         public void sub1_bothPositive_returnNegative4()
         {
-            Assert.That(uut.Subract(2).Subract(2).Accumulator, Is.EqualTo(-4));
+            Assert.That(uut.Subtract(2).Subtract(2).Accumulator, Is.EqualTo(-4));
         }
 
         [Test]
         public void sub1_Negative_positive_returnNegative0()
         {
-            Assert.That(uut.Subract(-1).Subract(1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Subtract(-1).Subtract(1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void sub1_positive_negative_return0()
         {
-            Assert.That(uut.Subract(1).Subract(-1).Accumulator, Is.EqualTo(0));
+            Assert.That(uut.Subtract(1).Subtract(-1).Accumulator, Is.EqualTo(0));
         }
 
         [Test]
         public void sub1_negative_negative_return2()
         {
-            Assert.That(uut.Subract(-1).Subract(-1).Accumulator, Is.EqualTo(2));
+            Assert.That(uut.Subtract(-1).Subtract(-1).Accumulator, Is.EqualTo(2));
         }
 
         /* Multiply*/

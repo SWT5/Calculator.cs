@@ -13,7 +13,7 @@ namespace Calculator.cs
         double Add(double a, double b);
         Calculator Add(double addend);
         double Subtract(double a, double b);
-        Calculator Subract(double subtractor);
+        Calculator Subtract(double subtractor);
         double Multiply(double a, double b);
         Calculator Multiply(double multiplier);
         double Power(double x, double exp);
