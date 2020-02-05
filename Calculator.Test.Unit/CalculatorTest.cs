@@ -260,5 +260,6 @@ namespace Calculator.Test.Unit
        {
            Assert.That(uut.Power(x, exp), Is.EqualTo(uut.Accumulator)); 
        }
+
     }
 }

@@ -87,5 +87,9 @@ namespace Calculator.cs
 
             return this;
         }
+        public  void clear()
+        {
+            Accumulator = 0;
+        }
     }
 }

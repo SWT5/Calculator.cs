@@ -19,5 +19,7 @@ namespace Calculator.cs
         Calculator Power_1(double exponent);
 
         Calculator Divide(double division);
+
+        void clear();
     }
 }
